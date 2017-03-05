@@ -1,0 +1,32 @@
+
+    Elementar
+    =========
+
+    Very simple distributed background job executor based on Redis and the Redisson library.
+
+
+    Defining and running jobs:
+
+    // define the job
+    class MyJob extends Job
+    {
+        @Override
+        public void run()
+        {
+            // do something here
+        }
+    }
+
+    // create a new task manager and enqueue the job
+    TaskManager taskManager = new TaskManager("localhost", 6379);
+    taskManager.enqueue(new MyJob());
+
+
+    Start the worker (you can scale out to as many workers as you want):
+
+    $ java -jar \
+        -Dredis_host=localhost \
+        -Dredis_port=6379 \
+        -Dinterval=1000 \
+        -Dthreads=50 \
+        elementar.jar

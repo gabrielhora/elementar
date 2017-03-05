@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+    redisPool:
+        image: redis:3.0
+        ports:
+            - 6379:6379
