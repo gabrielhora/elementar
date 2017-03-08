@@ -30,6 +30,7 @@ public class Worker
 	 */
 	public void work()
 	{
+		LOG.info("Awaiting jobs...");
 		while (run)
 		{
 			try

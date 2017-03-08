@@ -63,7 +63,6 @@ public class TaskManager
 		}
 		else
 		{
-			LOG.info("No jobs available in queue");
 			return null;
 		}
 	}
