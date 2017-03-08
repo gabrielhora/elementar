@@ -3,9 +3,10 @@
   <groupId>gsch</groupId>
   <artifactId>elementar</artifactId>
   <versioning>
+    <release>0.1.1</release>
     <versions>
-      <version>0.1.2-SNAPSHOT</version>
+      <version>0.1.1</version>
     </versions>
-    <lastUpdated>20170308023321</lastUpdated>
+    <lastUpdated>20170308023601</lastUpdated>
   </versioning>
 </metadata>
