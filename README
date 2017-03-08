@@ -5,9 +5,37 @@
     Very simple distributed background job executor based on Redis and the Redisson library.
 
 
-    Defining and running jobs:
+    ---
 
-    // define the job
+    Add to your project:
+
+    <!-- add the repository -->
+    <repositories>
+        <repository>
+            <id>elementar-mvn-repo</id>
+            <url>https://raw.github.com/gabrielhora/elementar/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- add the dependency -->
+    <dependency>
+        <groupId>gsch</groupId>
+        <artifactId>elementar</artifactId>
+        <version>0.1.0</version>
+    </dependency>
+
+
+    The worker jar can be downloaded from https://raw.github.com/gabrielhora/elementar/mvn-repo/gsch/elementar/0.1.0/elementar-0.1.0-jar-with-dependencies.jar
+
+
+    ---
+
+    Define your jobs:
+
     class MyJob extends Job
     {
         @Override
@@ -24,9 +52,10 @@
 
     Start the worker (you can scale out to as many workers as you want):
 
-    $ java -jar \
+    $ java -cp \
+        jar-with-your-jobs-and-dependencies.jar:elementar.jar \
         -Dredis_host=localhost \
         -Dredis_port=6379 \
         -Dinterval=1000 \
         -Dthreads=50 \
-        elementar.jar
+        gsch.Worker
