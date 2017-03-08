@@ -25,11 +25,11 @@
     <dependency>
         <groupId>gsch</groupId>
         <artifactId>elementar</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.1</version>
     </dependency>
 
 
-    The worker jar can be downloaded from https://raw.github.com/gabrielhora/elementar/mvn-repo/gsch/elementar/0.1.0/elementar-0.1.0-jar-with-dependencies.jar
+    The worker jar can be downloaded from https://raw.github.com/gabrielhora/elementar/mvn-repo/gsch/elementar/0.1.1/elementar-0.1.1-jar-with-dependencies.jar
 
 
     ---
