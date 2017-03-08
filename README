@@ -38,7 +38,6 @@
 
     class MyJob extends Job
     {
-        @Override
         public void run()
         {
             // do something here
@@ -50,12 +49,16 @@
     taskManager.enqueue(new MyJob());
 
 
-    Start the worker (you can scale out to as many workers as you want):
+    Start the worker:
+
+    You will need the elementar jar file and the your project's jar file (I recomend using
+    a fat jar so you don't have to specify a huge classpath in the command line).
+    You can scale out to as many workers as you want.
 
     $ java -cp \
         jar-with-your-jobs-and-dependencies.jar:elementar.jar \
-        -Dredis_host=localhost \
-        -Dredis_port=6379 \
-        -Dinterval=1000 \
-        -Dthreads=50 \
+        -Dredis_host=localhost \ # optional
+        -Dredis_port=6379 \      # optional
+        -Dinterval=1000 \        # optional
+        -Dthreads=50 \           # optional
         gsch.Worker
